@@ -1,0 +1,11 @@
+import psutil
+
+def get_ram_info():
+    virtual_memory = psutil.virtual_memory()
+    print("Total RAM:", virtual_memory.total)
+    print("Available RAM:", virtual_memory.available)
+    print("Used RAM:", virtual_memory.used)
+    print("Free RAM:", virtual_memory.free)
+
+if __name__ == "__main__":
+    get_ram_info()
