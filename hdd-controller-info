@@ -1,0 +1,13 @@
+import win32com.client
+
+def get_hdd_controller_info():
+    wmi = win32com.client.GetObject("winmgmts:")
+    controllers = wmi.InstancesOf("Win32_IDEController")
+    for controller in controllers:
+        print("Controller:", controller.Caption)
+        print("Description:", controller.Description)
+        # Add more properties you're interested in
+        print()
+
+if __name__ == "__main__":
+    get_hdd_controller_info()
